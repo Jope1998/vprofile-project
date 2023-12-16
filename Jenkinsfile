@@ -23,6 +23,22 @@ pipeline {
             steps{
                 sh 'mvn -s settings.xml -DiskpTest install'
             }
+            post{
+                success {
+                    echo "Now Archiving."
+                    archivieArtifacts artifacts: '**/*.war'
+                }
+            }
+        }
+        stage('Unit Test'){
+            steps {
+                sh 'mvn test'
+            }
+        }
+        stage('Code Analisis Checkstyle Analysis'){
+            steps {
+                sh 'mvn checkstyle:checkstyle'
+            }
         }
     }
 }
