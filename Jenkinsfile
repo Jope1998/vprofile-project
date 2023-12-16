@@ -42,8 +42,8 @@ pipeline {
                 sh 'mvn -s settings.xml checkstyle:checkstyle'
             }
         }
-        stage('Sonnar Analisys'){
-            enviroment {
+        stage('Sonnar Analisys') {
+            environment {
                 scannerHome = tool "${SONNARSCANNER}"
             }
             steps {
