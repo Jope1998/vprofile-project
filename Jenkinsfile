@@ -14,7 +14,7 @@ pipeline {
         NEXUSIP = '172.31.62.64'
         NEXUSPORT = '8081'
         NEXUS_GRP_REPO = 'vrpo-group'
-        NEXUS_LOGIN = 'nexusadmin'
+        NEXUS_LOGIN = 'nexuslogin'
     }
 
     stages{
